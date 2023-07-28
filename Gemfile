@@ -10,3 +10,6 @@ gem "rspec", "~> 3.12"
 gem "standard", "~> 1.30"
 
 gem "webmock", "~> 3.18", group: :test
+
+
+gem "geo_combine", github: "mnyrop/geocombine", branch: "bug/net-constant"
