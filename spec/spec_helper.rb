@@ -9,6 +9,9 @@ RSpec.configure do |config|
   # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!
 
+  # Don't show pending tests in output
+  config.filter_run_excluding skip: true
+
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
