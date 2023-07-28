@@ -1,3 +1,18 @@
+GIT
+  remote: https://github.com/mnyrop/geocombine.git
+  revision: d854242f57480a0d04df195e5dbb04a23f0ddbc0
+  branch: bug/net-explicit-require
+  specs:
+    geo_combine (0.8.0)
+      activesupport
+      faraday-net_http_persistent (~> 2.0)
+      git
+      json-schema
+      nokogiri
+      rsolr
+      sanitize
+      thor
+
 PATH
   remote: .
   specs:
@@ -31,15 +46,6 @@ GEM
     faraday-net_http_persistent (2.1.0)
       faraday (~> 2.5)
       net-http-persistent (~> 4.0)
-    geo_combine (0.8.0)
-      activesupport
-      faraday-net_http_persistent (~> 2.0)
-      git
-      json-schema
-      nokogiri
-      rsolr
-      sanitize
-      thor
     git (1.18.0)
       addressable (~> 2.8)
       rchardet (~> 1.8)
@@ -131,6 +137,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  geo_combine!
   rake (~> 13.0)
   rspec (~> 3.12)
   sdr_cli!
