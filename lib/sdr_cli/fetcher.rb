@@ -1,7 +1,6 @@
 require "geo_combine"
 require "geo_combine/harvester"
 
-
 module SdrCli
   class Fetcher
     attr_reader :ogm_path, :schema_version, :repo
@@ -24,7 +23,7 @@ module SdrCli
 
     def harvester
       @harvester ||= ::GeoCombine::Harvester.new(ogm_path: ogm_path,
-                                               schema_version: schema_version)
+        schema_version: schema_version)
     end
   end
 end
