@@ -39,6 +39,9 @@ GEM
       rexml
     crass (1.0.6)
     diff-lcs (1.5.0)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.8.1)
     faraday (2.7.10)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -46,10 +49,22 @@ GEM
     faraday-net_http_persistent (2.1.0)
       faraday (~> 2.5)
       net-http-persistent (~> 4.0)
+    ffi (1.15.5)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     git (1.18.0)
       addressable (~> 2.8)
       rchardet (~> 1.8)
     hashdiff (1.0.1)
+    http (5.1.1)
+      addressable (~> 2.8)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      llhttp-ffi (~> 0.4.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
+    http-form_data (2.3.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     json (2.6.3)
@@ -57,6 +72,10 @@ GEM
       addressable (>= 2.8)
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
+    llhttp-ffi (0.4.0)
+      ffi-compiler (~> 1.0)
+      rake (~> 13.0)
+    minitar (0.9)
     minitest (5.18.1)
     net-http-persistent (4.0.2)
       connection_pool (~> 2.2)
@@ -74,6 +93,7 @@ GEM
     rake (13.0.6)
     rchardet (1.8.0)
     regexp_parser (2.8.1)
+    retriable (3.1.2)
     rexml (3.2.5)
     rsolr (2.5.0)
       builder (>= 2.1.2)
@@ -111,6 +131,11 @@ GEM
     sanitize (6.0.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
+    solr_wrapper (4.0.2)
+      http
+      minitar
+      retriable
+      ruby-progressbar
     standard (1.30.1)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
@@ -126,6 +151,9 @@ GEM
     thor (1.2.2)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
     unicode-display_width (2.4.2)
     webmock (3.18.1)
       addressable (>= 2.8.0)
@@ -137,10 +165,12 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  dotenv
   geo_combine!
   rake (~> 13.0)
   rspec (~> 3.12)
   sdr_cli!
+  solr_wrapper
   standard (~> 1.30)
   webmock (~> 3.18)
 

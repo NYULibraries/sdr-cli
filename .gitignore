@@ -15,3 +15,8 @@
 
 GeoCombine
 spec/fixtures/*
+
+# DotEnv ignores
+.env
+.env.development
+.env.test
