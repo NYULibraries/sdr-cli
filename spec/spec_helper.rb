@@ -15,4 +15,18 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.around(:example, indexer: true) do |example|
+    shared_solr_opts = { managed: true, verbose: true, persist: false, download_dir: 'tmp' }
+    shared_solr_opts[:version] = ENV['SOLR_VERSION'] if ENV['SOLR_VERSION']
+
+    SolrWrapper.wrap(shared_solr_opts.merge(port: ENV['SOLR_PORT'], instance_dir: ENV['SOLR_INSTANCE_DIR'])) do |solr|
+      solr.with_collection(name: ENV['SOLR_INSTANCE_NAME'], dir: 'solr/conf') do
+        puts "Solr running at #{ENV['SOLR_URL']}, ^C to exit"
+        ENV['SOLR_URL'] = ENV['SOLR_URL']
+        example.run
+      end
+      solr.stop
+    end
+  end
 end
