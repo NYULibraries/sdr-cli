@@ -1,0 +1,28 @@
+{
+  "geoblacklight_version": "1.0",
+  "dc_identifier_s": "UMN_ALMA:9975522877501701",
+  "dc_rights_s": "Public",
+  "dc_title_s": "Partie septentrionale du royaume de Portugal",
+  "dct_provenance_s": "University of Minnesota",
+  "layer_slug_s": "p16022coll230:3467",
+  "solr_geom": "ENVELOPE(-9.4833,-6.1833,42.15,39.2333)",
+  "dc_creator_sm": [
+    "Bellin, Jacques Nicolas, 1703-1772"
+  ],
+  "dc_description_s": "Relief shown pictorially.|46 x 51 centimeters|Scale approximately 1:865,000|General Map Collection",
+  "dc_format_s": "JPEG",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://umedia.lib.umn.edu/item/p16022coll230:3467\",\"http://iiif.io/api/presentation#manifest\":\"https://cdm16022.contentdm.oclc.org/iiif/info/p16022coll230/3467/manifest.json\"}",
+  "dct_spatial_sm": [
+    "Portugal",
+    "Europe"
+  ],
+  "layer_modified_dt": "2022-09-28T02:15:59Z",
+  "dc_language_sm": [
+    "fre"
+  ],
+  "dc_publisher_s": "chez M. Remondini (Venice)",
+  "dct_issued_s": "1770 - 1780",
+  "dct_temporal_sm": [
+    "1770-1780"
+  ]
+}

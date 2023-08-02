@@ -1,0 +1,24 @@
+{
+  "geoblacklight_version": "1.0",
+  "dc_identifier_s": "UMN_ALMA:9914745140001701",
+  "dc_rights_s": "Public",
+  "dc_title_s": "Boston Harbor, Massachusetts",
+  "dct_provenance_s": "University of Minnesota",
+  "layer_slug_s": "p16022coll230:1346",
+  "solr_geom": "ENVELOPE(-73.5,-69.85,42.8833,41.1833)",
+  "dc_creator_sm": [
+    "United States Coast Survey"
+  ],
+  "dc_description_s": "Shows buoys with red and black ink.; Relief shown by hachures. Depths shown by soundings and shading.; \"Issued in Apr. 1878 C.P. Patterson, superintendent.\"; In upper right margin: Electrotype copy no. 12 by G. Mathiot U.S.C.S.; Includes sailing directions, tables of tides, lighthouses, and bottom types, and 3 coastal views.; In upper left margin: No. 337.; In upper center margin: Plate no. 1184.|71 x 89 centimeters|Scale 1:40,000|General Map Collection",
+  "dc_format_s": "JPEG",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://umedia.lib.umn.edu/item/p16022coll230:1346\",\"http://iiif.io/api/presentation#manifest\":\"https://cdm16022.contentdm.oclc.org/iiif/info/p16022coll230/1346/manifest.json\"}",
+  "layer_modified_dt": "2022-09-28T02:14:45Z",
+  "dc_language_sm": [
+    "eng"
+  ],
+  "dc_publisher_s": "United States Coast Survey (Washington,  D.C)",
+  "dct_issued_s": "1881",
+  "dct_temporal_sm": [
+    "1881"
+  ]
+}

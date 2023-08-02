@@ -1,0 +1,27 @@
+{
+  "geoblacklight_version": "1.0",
+  "dc_identifier_s": "UMN_ALMA:9913086700001701",
+  "dc_rights_s": "Public",
+  "dc_title_s": "Map of northern parts of the districts of Algoma and Nipissing, province of Ontario",
+  "dct_provenance_s": "University of Minnesota",
+  "layer_slug_s": "p16022coll230:680",
+  "solr_geom": "ENVELOPE(-85.3333,-78.95,49.7,44.9833)",
+  "dc_creator_sm": [
+    "Ontario. Bureau of Mines"
+  ],
+  "dc_description_s": "To accompany report of J. M. Bell, 13th report Bureau of Mines, 1904.; Shows locations for gypsum, iron, and lignite.|46 x 66 centimeters|Scale [1:506,880] 1 inch = 8 miles|General Map Collection",
+  "dc_format_s": "JPEG",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://umedia.lib.umn.edu/item/p16022coll230:680\",\"http://iiif.io/api/presentation#manifest\":\"https://cdm16022.contentdm.oclc.org/iiif/info/p16022coll230/680/manifest.json\"}",
+  "dct_spatial_sm": [
+    "Canada"
+  ],
+  "layer_modified_dt": "2022-09-28T02:15:04Z",
+  "dc_language_sm": [
+    "eng"
+  ],
+  "dc_publisher_s": "The Bureau (Toronto?)",
+  "dct_issued_s": "1904",
+  "dct_temporal_sm": [
+    "1904"
+  ]
+}

@@ -13,9 +13,6 @@
 # ignore IDE files
 .idea/
 
-GeoCombine
-spec/fixtures/*
-
 # DotEnv ignores
 .env
 .env.development

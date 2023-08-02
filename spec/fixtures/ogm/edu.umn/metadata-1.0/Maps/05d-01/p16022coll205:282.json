@@ -1,0 +1,23 @@
+{
+  "geoblacklight_version": "1.0",
+  "dc_identifier_s": "UMN_ALMA:9926873610001701",
+  "dc_rights_s": "Public",
+  "dc_title_s": "Map of Boston showing health districts and undrained and filled land.",
+  "dct_provenance_s": "University of Minnesota",
+  "layer_slug_s": "p16022coll205:282",
+  "solr_geom": "ENVELOPE(-71.18,-70.8,42.38,42.21)",
+  "dc_description_s": "Relief shown by hachures.|60 x 51 centimeters|Scale approximately 1:26,800|City Maps",
+  "dc_format_s": "JPEG",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://umedia.lib.umn.edu/item/p16022coll205:282\",\"http://iiif.io/api/presentation#manifest\":\"https://cdm16022.contentdm.oclc.org/iiif/info/p16022coll205/282/manifest.json\"}",
+  "dct_spatial_sm": [
+    "Boston, Massachusetts"
+  ],
+  "layer_modified_dt": "2022-09-28T02:16:11Z",
+  "dc_language_sm": [
+    "eng"
+  ],
+  "dc_publisher_s": "(Boston?)",
+  "dct_temporal_sm": [
+    "Approximately 1900"
+  ]
+}
