@@ -2,17 +2,6 @@ require "thor"
 
 module SdrCli
   class Cli < Thor
-    desc "message", "Prints a message that you pass in as an option"
-    long_desc <<-MSG
-      Prints a message that you pass in as an option. You might be asking yourself
-      "why would I want to print a message?" Well, mind your own business.
-    MSG
-    option :message
-    def message
-      puts SdrCli::VERSION
-      puts "My message is #{options[:message]}" if options[:message]
-    end
-
     desc "clone", "clones all OGM repositories or pass --repo to clone a specific repository"
     long_desc <<-MSG
       a command to clone all OGM repositories (via GeoCombine).  If you want to clone a specific repository, pass the --repo option.
