@@ -12,3 +12,8 @@
 
 # ignore IDE files
 .idea/
+
+# DotEnv ignores
+.env
+.env.development
+.env.test

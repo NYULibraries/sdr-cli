@@ -15,7 +15,6 @@ jobs:
       matrix:
         ruby:
           - '3.2.2'
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Ruby
@@ -23,5 +22,14 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
+    - name: Invoke cli
+      run: bundle exec sdr-cli --help
     - name: Run the default task
       run: bundle exec rake
+      env:
+        SOLR_INSTANCE_DIR: tmp/sdr-core-test
+        SOLR_INSTANCE_NAME: sdr-core-test
+        SOLR_URL: http://127.0.0.1:8983/solr/sdr-core-test
+        SOLR_PORT: 8983
+        SOLR_VERSION: 9.2.1
+
