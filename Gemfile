@@ -11,7 +11,6 @@ gem "standard", "~> 1.30"
 
 group :test do
   gem  'dotenv'
-  gem 'solr_wrapper'
   gem "webmock", "~> 3.18"
 end
 
