@@ -16,6 +16,8 @@ RSpec.describe SdrCli::Indexer, :indexer do
     it "should update an existing record from OGM Aardvark into the Solr index" do
       indexer.index(docs)
       doc = docs.first
+      pp doc
+
       doc['dct_alternative_sm'] = 'Jawns on Jawns'
       expect(indexer.index([doc])).to eq 1
     end
