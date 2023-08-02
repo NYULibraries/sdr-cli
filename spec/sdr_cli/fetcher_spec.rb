@@ -3,10 +3,10 @@ require "spec_helper"
 RSpec.describe SdrCli::Fetcher do
   let(:harvester) do
     instance_double(GeoCombine::Harvester,
-                    clone: true,
-                    clone_all: true,
-                    pull: true,
-                    pull_all: true)
+      clone: true,
+      clone_all: true,
+      pull: true,
+      pull_all: true)
   end
 
   describe "#clone" do
@@ -30,7 +30,7 @@ RSpec.describe SdrCli::Fetcher do
         expect(harvester).to have_received(:clone).with("my_repo")
       end
     end
-    context 'when the schema is declared' do
+    context "when the schema is declared" do
       it "should have configurations for the schema type specified" do
         fetcher = described_class.new(ogm_path: "spec/fixtures/ogm", schema_version: "aardvark")
         harvester_class = class_double(GeoCombine::Harvester).as_stubbed_const
@@ -64,7 +64,7 @@ RSpec.describe SdrCli::Fetcher do
         expect(harvester).to have_received(:pull).with("my_repo")
       end
     end
-    context 'when the schema is declared' do
+    context "when the schema is declared" do
       it "should have configurations for the schema type specified" do
         fetcher = described_class.new(ogm_path: "spec/fixtures/ogm", schema_version: "aardvark")
         harvester_class = class_double(GeoCombine::Harvester).as_stubbed_const
