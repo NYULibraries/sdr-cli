@@ -23,6 +23,4 @@ RSpec.describe SdrCli::Indexer do
       expect(gc_indexer).to have_received(:index).with([doc], commit_within: 5000)
     end
   end
-  it "should create a new Solr index from all records"
-  it "should replace a Solr index from all records"
 end
