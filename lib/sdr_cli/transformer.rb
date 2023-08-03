@@ -9,7 +9,7 @@ module SdrCli
     def transform_collection
       docs = Dir["#{@directory}/**/*.json"]
       docs.map do |doc|
-        json = JSON.parse(File.read(json_file))
+        json = JSON.parse(File.read(doc))
         transformer(json).run
       end
     end
