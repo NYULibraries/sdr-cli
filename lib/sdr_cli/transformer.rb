@@ -1,3 +1,5 @@
+require "geo_combine/migrators/v1_aardvark_migrator"
+
 module SdrCli
   class Transformer
     def initialize(directory:)
