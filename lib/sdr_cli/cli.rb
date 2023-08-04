@@ -29,5 +29,21 @@ module SdrCli
 
       SdrCli::Fetcher.new(ogm_path:, schema_version:, repo: options[:repo]).pull
     end
+
+    desc "transform", "transforms a collection of GeoBlacklight 1.0 documents to OGM Aardvark"
+    long_desc <<-MSG
+      a command to transform a collection of GeoBlacklight 1.0 documents to OGM Aardvark.  
+      Pass the --directory option to specify the directory containing the GeoBlacklight 1.0 documents.  
+      Pass the --destination option to specify the directory where the transformed documents will be saved.
+    MSG
+
+    option :directory
+    option :destination
+    def transform
+      directory = options[:directory]
+      destination = options[:destination]
+
+      SdrCli::Transformer.new(directory: directory, destination: destination).run
+    end
   end
 end

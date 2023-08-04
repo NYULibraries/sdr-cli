@@ -4,7 +4,7 @@ module SdrCli
   class Transformer
     attr_reader :directory, :destination
 
-    def initialize(directory:, destination: )
+    def initialize(directory:, destination:)
       @directory = directory
       @destination = destination
     end
@@ -27,12 +27,9 @@ module SdrCli
     def save_to_destination(docs)
       docs.each do |doc|
         json = JSON.parse(doc)
-        File.open(File.join(destination, json['id']), "w+") do |f|
-          f.write(doc)
-        end
+        File.write(File.join(destination, json["id"]), doc)
       end
     end
-
 
     def transformer(json)
       GeoCombine::Migrators::V1AardvarkMigrator.new(v1_hash: json)
