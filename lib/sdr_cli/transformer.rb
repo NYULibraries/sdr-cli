@@ -26,7 +26,7 @@ module SdrCli
 
     def save_to_destination(docs)
       docs.each do |doc|
-        File.open(File.join(destination, doc['id']), "w+") do |f|
+        File.open(File.join(destination, "#{doc['id']}.json"), "w+") do |f|
           f.write(doc.to_json)
         end
       end

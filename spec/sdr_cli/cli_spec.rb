@@ -52,11 +52,12 @@ RSpec.describe SdrCli::Cli do
     end
     context 'when a directory and destination are specified' do
       it "transforms a given directory" do
+        entry_count = Dir.entries("spec/fixtures/ogm/edu.umn/metadata-1.0/Datasets/05d-04").length
         described_class.new.invoke(:transform,
                                    [],
                                    {directory: "spec/fixtures/ogm/edu.umn/metadata-1.0/Datasets/05d-04",
                                     destination: FileUtils.mkdir("tmp/ogm_aardvark")})
-        expect(Dir.exist?("tmp/ogm_aardvark")).to be true
+        expect(Dir.entries("tmp/ogm_aardvark").length).to eq entry_count
       end
     end
   end
