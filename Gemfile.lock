@@ -1,0 +1,150 @@
+GIT
+  remote: https://github.com/the-codetrane/geo-combine.git
+  revision: dec4595c96608ed89be8b745059010ef70118a58
+  branch: v1-aardvark
+  specs:
+    geo_combine (0.8.0)
+      activesupport
+      faraday-net_http_persistent (~> 2.0)
+      git
+      json-schema
+      nokogiri
+      rsolr
+      sanitize
+      thor
+
+PATH
+  remote: .
+  specs:
+    sdr_cli (0.1.0)
+      faraday (~> 2.7)
+      geo_combine (~> 0.8.0)
+      thor (~> 1.2.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (7.0.6)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+    addressable (2.8.4)
+      public_suffix (>= 2.0.2, < 6.0)
+    ast (2.4.2)
+    builder (3.2.4)
+    concurrent-ruby (1.2.2)
+    connection_pool (2.4.1)
+    crack (0.4.5)
+      rexml
+    crass (1.0.6)
+    diff-lcs (1.5.0)
+    dotenv (2.8.1)
+    faraday (2.7.10)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.2)
+    faraday-net_http_persistent (2.1.0)
+      faraday (~> 2.5)
+      net-http-persistent (~> 4.0)
+    git (1.18.0)
+      addressable (~> 2.8)
+      rchardet (~> 1.8)
+    hashdiff (1.0.1)
+    i18n (1.14.1)
+      concurrent-ruby (~> 1.0)
+    json (2.6.3)
+    json-schema (4.0.0)
+      addressable (>= 2.8)
+    language_server-protocol (3.17.0.3)
+    lint_roller (1.1.0)
+    minitest (5.18.1)
+    net-http-persistent (4.0.2)
+      connection_pool (~> 2.2)
+    nokogiri (1.15.3-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.3-x86_64-linux)
+      racc (~> 1.4)
+    parallel (1.23.0)
+    parser (3.2.2.3)
+      ast (~> 2.4.1)
+      racc
+    public_suffix (5.0.3)
+    racc (1.7.1)
+    rainbow (3.1.1)
+    rake (13.0.6)
+    rchardet (1.8.0)
+    regexp_parser (2.8.1)
+    rexml (3.2.5)
+    rsolr (2.5.0)
+      builder (>= 2.1.2)
+      faraday (>= 0.9, < 3, != 2.0.0)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.6)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.1)
+    rubocop (1.52.1)
+      json (~> 2.3)
+      parallel (~> 1.10)
+      parser (>= 3.2.2.3)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.28.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.29.0)
+      parser (>= 3.2.1.0)
+    rubocop-performance (1.18.0)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
+    ruby-progressbar (1.13.0)
+    ruby2_keywords (0.0.5)
+    sanitize (6.0.2)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.12.0)
+    standard (1.30.1)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.0)
+      rubocop (~> 1.52.0)
+      standard-custom (~> 1.0.0)
+      standard-performance (~> 1.1.0)
+    standard-custom (1.0.2)
+      lint_roller (~> 1.0)
+      rubocop (~> 1.50)
+    standard-performance (1.1.2)
+      lint_roller (~> 1.1)
+      rubocop-performance (~> 1.18.0)
+    thor (1.2.2)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
+    unicode-display_width (2.4.2)
+    webmock (3.18.1)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
+
+PLATFORMS
+  arm64-darwin-22
+  x86_64-linux
+
+DEPENDENCIES
+  dotenv
+  geo_combine!
+  rake (~> 13.0)
+  rspec (~> 3.12)
+  sdr_cli!
+  standard (~> 1.30)
+  webmock (~> 3.18)
+
+BUNDLED WITH
+   2.4.16

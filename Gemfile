@@ -10,4 +10,4 @@ gem "rspec", "~> 3.12"
 gem "standard", "~> 1.30"
 gem "webmock", "~> 3.18"
 
-gem "geo_combine", github: "OpenGeoMetadata/GeoCombine", branch: "v1-aardvark"
+gem "geo_combine", github: "the-codetrane/geo-combine", branch: "v1-aardvark"
