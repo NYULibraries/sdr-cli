@@ -16,7 +16,7 @@ RSpec.describe SdrCli::Transformer do
 
   it "should save the transformed data to the destination" do
     transformer.run
-    file =  File.join("tmp", "#{aardvark_doc["id"]}.json")
+    file = File.join("tmp", "#{aardvark_doc["id"]}.json")
     expect(File.exist?(file)).to be true
 
     # clean up file to ensure test idempotency

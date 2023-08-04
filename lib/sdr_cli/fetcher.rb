@@ -12,11 +12,9 @@ module SdrCli
     end
 
     def clone
-      begin
-        repo.present? ? harvester.clone(repo) : harvester.clone_all
-      rescue NoMethodError
-        puts "Something went wrong. Please ensure your options are valid: ogm_path: #{ogm_path}, schema_version: #{schema_version}, repo: #{repo}"
-      end
+      repo.present? ? harvester.clone(repo) : harvester.clone_all
+    rescue NoMethodError
+      puts "Something went wrong. Please ensure your options are valid: ogm_path: #{ogm_path}, schema_version: #{schema_version}, repo: #{repo}"
     end
 
     def pull
