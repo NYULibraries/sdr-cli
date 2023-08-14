@@ -17,6 +17,7 @@ PATH
   remote: .
   specs:
     sdr_cli (0.1.0)
+      dotenv (~> 2.7)
       faraday (~> 2.7)
       geo_combine (~> 0.8.0)
       thor (~> 1.2.2)
@@ -24,12 +25,12 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.0.6)
+    activesupport (7.0.7)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.4)
+    addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     builder (3.2.4)
@@ -58,12 +59,12 @@ GEM
       addressable (>= 2.8)
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
-    minitest (5.18.1)
+    minitest (5.19.0)
     net-http-persistent (4.0.2)
       connection_pool (~> 2.2)
-    nokogiri (1.15.3-arm64-darwin)
+    nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.15.3-x86_64-linux)
+    nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     parallel (1.23.0)
     parser (3.2.2.3)
@@ -75,7 +76,7 @@ GEM
     rake (13.0.6)
     rchardet (1.8.0)
     regexp_parser (2.8.1)
-    rexml (3.2.5)
+    rexml (3.2.6)
     rsolr (2.5.0)
       builder (>= 2.1.2)
       faraday (>= 0.9, < 3, != 2.0.0)
@@ -138,7 +139,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  dotenv
   geo_combine!
   rake (~> 13.0)
   rspec (~> 3.12)
@@ -147,4 +147,4 @@ DEPENDENCIES
   webmock (~> 3.18)
 
 BUNDLED WITH
-   2.4.16
+   2.4.17
