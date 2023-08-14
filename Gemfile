@@ -14,4 +14,4 @@ group :test do
   gem "webmock", "~> 3.18"
 end
 
-gem "geo_combine", github: "mnyrop/geocombine", branch: "bug/net-explicit-require"
+gem "geo_combine", github: "OpenGeoMetadata/GeoCombine", branch: "v1-aardvark"

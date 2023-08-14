@@ -1,7 +1,7 @@
 GIT
-  remote: https://github.com/mnyrop/geocombine.git
-  revision: d854242f57480a0d04df195e5dbb04a23f0ddbc0
-  branch: bug/net-explicit-require
+  remote: https://github.com/OpenGeoMetadata/GeoCombine.git
+  revision: e3e9f91de40272c47bb7bf48c70b53611b1b056e
+  branch: v1-aardvark
   specs:
     geo_combine (0.8.0)
       activesupport
