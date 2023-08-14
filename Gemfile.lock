@@ -17,6 +17,7 @@ PATH
   remote: .
   specs:
     sdr_cli (0.1.0)
+      dotenv (~> 2.7)
       faraday (~> 2.7)
       geo_combine (~> 0.8.0)
       thor (~> 1.2.2)
@@ -138,7 +139,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  dotenv
   geo_combine!
   rake (~> 13.0)
   rspec (~> 3.12)
