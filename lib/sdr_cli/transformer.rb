@@ -2,19 +2,33 @@ require "geo_combine/migrators/v1_aardvark_migrator"
 
 module SdrCli
   class Transformer
-    def initialize(directory:)
+    attr_reader :directory, :destination
+
+    def initialize(directory:, destination:)
       @directory = directory
+      @destination = destination
     end
 
-    def transform_collection
-      docs = Dir["#{@directory}/**/*.json"]
+    def run
+      docs = Dir["#{directory}/**/*.json"]
+      new_docs = transform_collection(docs)
+      save_to_destination(new_docs)
+    end
+
+    private
+
+    def transform_collection(docs)
       docs.map do |doc|
         json = JSON.parse(File.read(doc))
         transformer(json).run
       end
     end
 
-    private
+    def save_to_destination(docs)
+      docs.each do |doc|
+        File.write(File.join(destination, "#{doc["id"]}.json"), doc.to_json)
+      end
+    end
 
     def transformer(json)
       GeoCombine::Migrators::V1AardvarkMigrator.new(v1_hash: json)
