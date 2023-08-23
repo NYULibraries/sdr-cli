@@ -30,6 +30,23 @@ module SdrCli
       SdrCli::Fetcher.new(ogm_path:, schema_version:, repo: options["repo"]).pull
     end
 
+    desc 'index', 'index a directory of geospatial documents to Solr'
+    long_desc <<-MSG
+      a command to index a directory of geospatial documents to Solr.
+      Pass the --directory option to specify the directory containing the geospatial documents.
+      Pass the --solr_url option to specify the Solr URL.
+    MSG
+
+    option :directory
+    option :solr_url
+    def index
+      directory = options["directory"]
+      raise ArgumentError, "You must specify a directory" unless directory
+      solr_url = options["solr_url"]
+      raise ArgumentError, "You must specify a Solr URL" unless solr_url
+      SdrCli::Indexer.new(solr_url: solr_url).index(directory)
+    end
+
     desc "transform", "transforms a collection of GeoBlacklight 1.0 documents to OGM Aardvark"
     long_desc <<-MSG
       a command to transform a collection of GeoBlacklight 1.0 documents to OGM Aardvark.  

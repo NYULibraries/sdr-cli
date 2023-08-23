@@ -45,6 +45,19 @@ RSpec.describe SdrCli::Cli do
     end
   end
 
+  describe "#index", type: :solr do
+    context "when a directory and Solr URL are specified" do
+      it "indexes a given directory" do
+        dir = "spec/fixtures/ogm/edu.umn/metadata-aardvark/**/*.json"
+        response = described_class.new.invoke(:index,
+          [],
+          {directory: dir,
+           solr_url: "http://localhost:8983/solr/sdr-core-test"})
+        expect(response).to eq Dir[dir].entries.length
+      end
+    end
+  end
+
   describe "#transform" do
     after do
       # clean up to ensure test is idempotent
