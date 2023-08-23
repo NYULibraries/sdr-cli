@@ -30,7 +30,7 @@ module SdrCli
       SdrCli::Fetcher.new(ogm_path:, schema_version:, repo: options["repo"]).pull
     end
 
-    desc 'index', 'index a directory of geospatial documents to Solr'
+    desc "index", "index a directory of geospatial documents to Solr"
     long_desc <<-MSG
       a command to index a directory of geospatial documents to Solr.
       Pass the --directory option to specify the directory containing the geospatial documents.

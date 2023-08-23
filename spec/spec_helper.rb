@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "sdr_cli"
-require 'solr_wrapper'
+require "solr_wrapper"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -18,14 +18,12 @@ RSpec.configure do |config|
   end
 
   config.around(:each, type: :solr) do |example|
-    shared_solr_opts = { managed: true, verbose: true, persist: false, download_dir: 'tmp' }
-    shared_solr_opts[:version] = ENV['SOLR_VERSION'] if ENV['SOLR_VERSION']
+    shared_solr_opts = {managed: true, verbose: true, persist: false, download_dir: "tmp"}
+    shared_solr_opts[:version] = ENV["SOLR_VERSION"] if ENV["SOLR_VERSION"]
 
-    SolrWrapper.wrap(shared_solr_opts.merge(port: ENV['SOLR_PORT'], instance_dir: ENV['SOLR_INSTANCE_DIR'])) do |solr|
-      solr.with_collection(name: ENV['SOLR_INSTANCE_NAME'], dir: 'solr/conf') do
-
-      example.run
-
+    SolrWrapper.wrap(shared_solr_opts.merge(port: ENV["SOLR_PORT"], instance_dir: ENV["SOLR_INSTANCE_DIR"])) do |solr|
+      solr.with_collection(name: ENV["SOLR_INSTANCE_NAME"], dir: "solr/conf") do
+        example.run
       end
     end
   end
