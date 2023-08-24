@@ -18,8 +18,5 @@ RSpec.describe SdrCli::Transformer do
     transformer.run
     file = File.join("tmp", "#{aardvark_doc["id"]}.json")
     expect(File.exist?(file)).to be true
-
-    # clean up file to ensure test idempotency
-    # FileUtils.remove_file(destination_file)
   end
 end
