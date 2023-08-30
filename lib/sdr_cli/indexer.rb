@@ -8,7 +8,7 @@ module SdrCli
 
     def index(dir_glob, commit_within: ENV.fetch("SOLR_COMMIT_WITHIN", 5000).to_i)
       docs = Dir[dir_glob].map { |file| JSON.parse(File.read(file)) }
-      fix_solr_geom_key(docs)
+      fix_solr_keys(docs)
       indexer.index(docs, commit_within: commit_within)
     end
 
@@ -23,9 +23,10 @@ module SdrCli
     end
 
     # THIS IS HOPEFULLY TEMPORARY AS THIS PR IS IN FLIGHT - https://github.com/OpenGeoMetadata/GeoCombine/pull/143
-    def fix_solr_geom_key(docs)
+    def fix_solr_keys(docs)
       docs.each do |doc|
-        doc.transform_keys! { |key| (key == "solr_geom") ? "dct_bbox" : key }
+        doc.transform_keys! { |key| (key == "solr_geom") ? "dcat_bbox" : key }
+        doc.delete("uuid")
       end
     end
   end
