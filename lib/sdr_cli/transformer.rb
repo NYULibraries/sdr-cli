@@ -47,7 +47,6 @@ module SdrCli
       puts "Error: #{e.message} Document #{json}"
     end
 
-
     # THIS IS HOPEFULLY TEMPORARY AS THIS PR IS IN FLIGHT - https://github.com/OpenGeoMetadata/GeoCombine/pull/143
     def fix_solr_keys(json)
       json.transform_keys! { |key| (key == "solr_geom") ? "dcat_bbox" : key }

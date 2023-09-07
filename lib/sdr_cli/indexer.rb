@@ -7,7 +7,8 @@ module SdrCli
     end
 
     def index(dir_glob, commit_within: ENV.fetch("SOLR_COMMIT_WITHIN", 5000).to_i)
-      docs = Dir[dir_glob].map { |file| JSON.parse(File.read(file)) }
+      files = Dir[dir_glob]
+      docs = files.map { |file| JSON.parse(File.read(file)) }
       indexer.index(docs, commit_within: commit_within)
     end
 
