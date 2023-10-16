@@ -49,8 +49,18 @@ module SdrCli
 
     # THIS IS HOPEFULLY TEMPORARY AS THIS PR IS IN FLIGHT - https://github.com/OpenGeoMetadata/GeoCombine/pull/143
     def fix_solr_keys(json)
-      json.transform_keys! { |key| (key == "solr_geom") ? "locn_geometry" : key }
+      json.transform_keys! do
+        case key
+        when 'solr_geom'
+          'locn_geometry'
+        when 'layer_geom_type_s'
+          'gbl_resourceType_sm'
+        else
+          key
+        end
+      end
       json.delete("uuid")
+      json['gbl_resourceType_sm'] = "#{json['gbl_resourceType_sm']} Data"
     end
   end
 end
