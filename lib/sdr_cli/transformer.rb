@@ -60,7 +60,7 @@ module SdrCli
         end
       end
       json.delete("uuid")
-      json['gbl_resourceType_sm'] = "#{json['gbl_resourceType_sm']} Data"
+      json['gbl_resourceType_sm'] = ["#{json['gbl_resourceType_sm']} data"]
     end
   end
 end
