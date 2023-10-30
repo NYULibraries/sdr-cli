@@ -41,14 +41,14 @@ module SdrCli
     end
 
     def transformer(json)
-      fix_solr_keys(json)
+      fix_solr_doc(json)
       GeoCombine::Migrators::V1AardvarkMigrator.new(v1_hash: json)
     rescue NoMethodError => e
       puts "Error: #{e.message} Document #{json}"
     end
 
     # THIS IS HOPEFULLY TEMPORARY AS THIS PR IS IN FLIGHT - https://github.com/OpenGeoMetadata/GeoCombine/pull/143
-    def fix_solr_keys(json)
+    def fix_solr_doc(json)
       json.transform_keys! do |key|
         case key
         when 'solr_geom'
@@ -60,7 +60,27 @@ module SdrCli
         end
       end
       json.delete("uuid")
-      json['gbl_resourceType_sm'] = ["#{json['gbl_resourceType_sm']} data"]
+      json['gbl_resourceType_sm'] = translate_geom_type_data(json['gbl_resourceType_sm'])
+      json['gbl_mdVersion_s'] = "4.0"
+    end
+
+    def translate_geom_type_data(geom_type)
+      case geom_type
+      when "Polygon"
+        "Polygon data"
+      when "Point"
+        "Point data"
+      when "Raster"
+        "Raster data"
+      when "Line"
+        "Line data"
+      when "Mixed"
+        "Multi-spectral data"
+      when "Image"
+        "Satellite imagery"
+      else
+        geom_type
+      end
     end
   end
 end
