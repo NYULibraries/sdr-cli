@@ -51,20 +51,20 @@ module SdrCli
     def fix_solr_doc(json)
       json.transform_keys! do |key|
         case key
-        when 'solr_geom'
-          'locn_geometry'
-        when 'layer_geom_type_s'
-          'gbl_resourceType_sm'
-        when 'dc_type_s'
-          'gbl_resourceClass_sm'
+        when "solr_geom"
+          "locn_geometry"
+        when "layer_geom_type_s"
+          "gbl_resourceType_sm"
+        when "dc_type_s"
+          "gbl_resourceClass_sm"
         else
           key
         end
       end
       json.delete("uuid")
-      json['gbl_resourceType_sm'] = translate_geom_type_data(json['gbl_resourceType_sm'])
-      json['gbl_resourceClass_sm'] = translate_geom_type_class(json['gbl_resourceClass_sm'])
-      json['gbl_mdVersion_s'] = "4.0"
+      json["gbl_resourceType_sm"] = translate_geom_type_data(json["gbl_resourceType_sm"])
+      json["gbl_resourceClass_sm"] = translate_geom_type_class(json["gbl_resourceClass_sm"])
+      json["gbl_mdVersion_s"] = "4.0"
     end
 
     def translate_geom_type_data(geom_type)
@@ -95,7 +95,6 @@ module SdrCli
       else
         geo_class
       end
-
     end
   end
 end
