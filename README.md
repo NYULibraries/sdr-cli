@@ -15,13 +15,16 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-To see documentation on how to use SDR CLI, call `bundle exec sdr-cli --help` from the command line.
+### Commands:
+`sdr-cli clone`           clones all OGM repositories or pass `--repo`to clone a specific repository
 
-## Development
+`sdr-cli help [COMMAND]`  Describe available commands or one specific command
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+`sdr-cli index`        index a directory of geospatial documents to Solr
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+`sdr-cli pull`    updates all OGM repositories or pass `--repo` to update a specific repository
+
+`sdr-cli transform`      transforms a collection of GeoBlacklight 1.0 documents to OGM Aardvark
 
 ## Contributing
 
