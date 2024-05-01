@@ -48,7 +48,7 @@ RSpec.describe SdrCli::Cli do
   describe "#index", type: :solr do
     context "when a directory and Solr URL are specified" do
       it "indexes a given directory" do
-        dir = "spec/fixtures/ogm/edu.umn/metadata-aardvark/**/*.json"
+        dir = "spec/fixtures/ogm/edu.umn/metadata-aardvark/"
         response = described_class.new.invoke(:index,
           [],
           {directory: dir,

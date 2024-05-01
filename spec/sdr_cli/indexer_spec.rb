@@ -3,7 +3,7 @@ require "spec_helper"
 RSpec.describe SdrCli::Indexer do
   describe "#indexer" do
     let(:indexer) { described_class.new(solr_url: ENV["SOLR_URL"]) }
-    let(:dir) { "spec/fixtures/ogm/edu.umn/metadata-aardvark/Datasets/05d-03/*.json" }
+    let(:dir) { "spec/fixtures/ogm/edu.umn/metadata-aardvark/Datasets/05d-03/" }
     let(:gc_indexer) { instance_double(GeoCombine::Indexer, solr: true, index: true) }
 
     before do
