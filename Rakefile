@@ -10,10 +10,19 @@ require 'standard/rake'
 task default: %i[spec standard]
 
 namespace :dev do
-  desc 'Test Auditor in development'
-  task :auditor do
-    require_relative 'lib/sdr_cli'
+  namespace :auditor do
+    desc 'Test Auditor in development'
+    task :light do
+      require_relative 'lib/sdr_cli'
 
-    SdrCli::Cli.start(%w[audit --directory ../edu.nyu --destination .])
+      SdrCli::Cli.start(%w[audit --directory ../edu.nyu --destination .])
+    end
+
+    desc 'Test Auditor in development'
+    task :full do
+      require_relative 'lib/sdr_cli'
+
+      SdrCli::Cli.start(%w[audit --directory ../edu.nyu --destination . --check-downloads])
+    end
   end
 end

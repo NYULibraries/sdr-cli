@@ -9,14 +9,15 @@ module SdrCli
   class Auditor
     attr_reader :directory, :destination
 
-    def initialize(directory:, destination:)
+    def initialize(directory:, destination:, check_downloads: false)
       @directory = directory
       @destination = destination
+      @check_downloads = check_downloads
     end
 
     def run
-      exit unless Dir.exist?(@directory)
-      exit unless Dir.exist?(@destination)
+      raise 'Cannot find metadata project directory' unless Dir.exist?(@directory)
+      raise 'Cannot find destination directory' unless Dir.exist?(@destination)
 
       csv_path = "#{@destination}/aardvark.csv"
 
@@ -31,12 +32,12 @@ module SdrCli
       public_wms_layers = wms_layer_names('https://maps-public.geo.nyu.edu/geoserver/sdr/wms').sort!
       restricted_wms_layers = wms_layer_names('https://maps-restricted.geo.nyu.edu/geoserver/sdr/wms').sort!
 
-      headers = %i[category id access format download_url found_in_wfs found_in_wms title]
+      headers = %i[category id access format download_url download_status found_in_wfs found_in_wms title]
 
       json_files = Dir.glob("#{@directory}/metadata-aardvark/*/*.json")
 
       CSV.open(csv_path, 'w', headers:, write_headers: true) do |csv|
-        json_files.each do |path|
+        json_files.each_with_index do |path, index|
           parts = path.split('/')
           category = parts[-2]
           file = parts[-1]
@@ -60,12 +61,38 @@ module SdrCli
                             'N/A'
                           end
 
+          download_url = references['http://schema.org/downloadUrl']
+
+          if download_url
+            if @check_downloads
+              puts "Checking #{index + 1} of #{json_files.size} - #{download_url}..."
+              uri = URI(download_url)
+              http = Net::HTTP.new(uri.host, uri.port)
+              http.use_ssl = uri.scheme == 'https'
+              http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+              request = Net::HTTP::Head.new(uri)
+
+              begin
+                download_status = http.request(request).is_a?(Net::HTTPSuccess) ? 'Success' : 'Failed'
+              rescue StandardError => e
+                download_status = e.message
+              end
+
+              puts download_status
+            else
+              download_status = 'Skipped'
+            end
+          else
+            download_status = 'N/A'
+          end
+
           csv << [
             category,
             id,
             data['dct_accessRights_s'],
             data['dct_format_s'],
-            references['http://schema.org/downloadUrl'],
+            download_url,
+            download_status,
             wfs_existence,
             wms_existence,
             data['dct_title_s']

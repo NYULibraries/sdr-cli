@@ -75,14 +75,16 @@ module SdrCli
 
     option :directory
     option :destination
+    option :check_downloads, type: :boolean
     def audit
       directory = options["directory"]
       destination = options["destination"]
+      check_downloads = options["check_downloads"]
 
       raise ArgumentError, "You must specify the metadata project directory" unless directory
       raise ArgumentError, "You must specify a destination directory" unless destination
 
-      SdrCli::Auditor.new(directory: directory, destination: destination).run
+      SdrCli::Auditor.new(directory: directory, destination: destination, check_downloads: check_downloads).run
     end
   end
 end
