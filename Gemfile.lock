@@ -1,41 +1,32 @@
-GIT
-  remote: https://github.com/the-codetrane/geo-combine.git
-  revision: dec4595c96608ed89be8b745059010ef70118a58
-  branch: v1-aardvark
-  specs:
-    geo_combine (0.8.0)
-      activesupport
-      faraday-net_http_persistent (~> 2.0)
-      git
-      json-schema
-      nokogiri
-      rsolr
-      sanitize
-      thor
-
 PATH
   remote: .
   specs:
     sdr_cli (0.1.0)
       dotenv (~> 2.7)
-      faraday (~> 2.7)
+      faraday (~> 2.10.1)
       thor (~> 1.2.2)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.0.7.2)
+    activesupport (7.1.3.4)
+      base64
+      bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
+      connection_pool (>= 2.2.5)
+      drb
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
+      mutex_m
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     base64 (0.1.1)
-    builder (3.2.4)
+    bigdecimal (3.1.8)
+    builder (3.3.0)
     coderay (1.1.3)
-    concurrent-ruby (1.2.2)
+    concurrent-ruby (1.3.3)
     connection_pool (2.4.1)
     crack (0.4.5)
       rexml
@@ -44,19 +35,34 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.8.1)
-    faraday (2.7.10)
-      faraday-net_http (>= 2.0, < 3.1)
-      ruby2_keywords (>= 0.0.4)
+    drb (2.2.1)
+    faraday (2.10.1)
+      faraday-net_http (>= 2.0, < 3.2)
+      logger
     faraday-net_http (3.0.2)
     faraday-net_http_persistent (2.1.0)
       faraday (~> 2.5)
       net-http-persistent (~> 4.0)
+    faraday-retry (2.2.1)
+      faraday (~> 2.0)
     ffi (1.15.5)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
-    git (1.18.0)
+    geo_combine (0.9.1)
+      activesupport
+      faraday-net_http_persistent (~> 2.0)
+      faraday-retry (~> 2.2)
+      git
+      json-schema
+      nokogiri
+      rsolr
+      sanitize
+      thor
+    git (2.1.1)
+      activesupport (>= 5.0)
       addressable (~> 2.8)
+      process_executer (~> 1.1)
       rchardet (~> 1.8)
     hashdiff (1.0.1)
     http (5.1.1)
@@ -67,29 +73,32 @@ GEM
     http-cookie (1.0.5)
       domain_name (~> 0.5)
     http-form_data (2.3.0)
-    i18n (1.14.1)
+    i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     json (2.6.3)
-    json-schema (4.0.0)
+    json-schema (4.3.1)
       addressable (>= 2.8)
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
     llhttp-ffi (0.4.0)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
+    logger (1.6.0)
     method_source (1.0.0)
     minitar (0.9)
-    minitest (5.19.0)
+    minitest (5.24.1)
+    mutex_m (0.2.0)
     net-http-persistent (4.0.2)
       connection_pool (~> 2.2)
-    nokogiri (1.15.4-arm64-darwin)
+    nokogiri (1.16.7-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.15.4-x86_64-linux)
+    nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
+    process_executer (1.1.0)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -101,7 +110,7 @@ GEM
     regexp_parser (2.8.1)
     retriable (3.1.2)
     rexml (3.2.6)
-    rsolr (2.5.0)
+    rsolr (2.6.0)
       builder (>= 2.1.2)
       faraday (>= 0.9, < 3, != 2.0.0)
     rspec (3.12.0)
@@ -135,8 +144,7 @@ GEM
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.13.0)
-    ruby2_keywords (0.0.5)
-    sanitize (6.0.2)
+    sanitize (6.1.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     solr_wrapper (4.0.2)
@@ -170,10 +178,11 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  arm64-darwin-23
   x86_64-linux
 
 DEPENDENCIES
-  geo_combine!
+  geo_combine (~> 0.9)
   pry (~> 0.14.2)
   rake (~> 13.0)
   rspec (~> 3.12)
