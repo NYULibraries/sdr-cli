@@ -24,6 +24,18 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 `sdr-cli transform`  transforms a collection of GeoBlacklight 1.0 documents to OGM Aardvark
 
+## Development
+
+### Running Tests
+
+After checking out the project, copy `.env.example` to `.env`. These variables will inform the `solr_wrapper` gem how to start up a Solr instance when running the test suite.
+
+Then run the test suite with the following command:
+
+```bash
+$ bundle exec rake
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/NYULibraries/sdr-cli.
