@@ -3,6 +3,7 @@
 require_relative "sdr_cli/version"
 require_relative "sdr_cli/web_feature_service_client"
 require_relative "sdr_cli/web_map_service_client"
+require_relative "sdr_cli/aardvark_file"
 require_relative "sdr_cli/fetcher"
 require_relative "sdr_cli/transformer"
 require_relative "sdr_cli/indexer"
