@@ -68,8 +68,8 @@ module SdrCli
 
     desc "audit", "Compares the metadata repo with what's available in NYU GeoServer instances"
     long_desc <<-MSG
-      A command to compare the metadata repo with what's available in NYU GeoServer instances.
-      Pass the --directory option to specific the directory containing the NYU Metadata repository.
+      A command to compare a local metadata repo with what's available in NYU GeoServer instances.
+      Pass the --directory option to specify the directory containing an NYU Metadata repository.
       Pass the --destination option to specify the directory where the audit report CSV will be saved.
     MSG
 

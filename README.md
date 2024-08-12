@@ -14,15 +14,13 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-`sdr-cli clone`         clones all OGM repositories or pass --repo to clone a specific repository
-
-`sdr-cli help [COMMAND]`  Describe available commands or one specific command
-
-`sdr-cli index` index a directory of geospatial documents to Solr
-
-`sdr-cli pull` updates all OGM repositories or pass --repo to update a specific repository
-
-`sdr-cli transform`  transforms a collection of GeoBlacklight 1.0 documents to OGM Aardvark
+- `sdr-cli audit` compares a local NYU metadata repo with what's available in NYU GeoServer instances
+  - Example: `sdr-cli audit --directory tmp/opengeometadata/edu.nyu --destination tmp`
+- `sdr-cli clone` clones all OGM repositories or pass --repo to clone a specific repository
+- `sdr-cli help [COMMAND]` describe available commands or one specific command
+- `sdr-cli index` index a directory of geospatial documents to Solr
+- `sdr-cli pull` updates all OGM repositories or pass --repo to update a specific repository
+- `sdr-cli transform`  transforms a collection of GeoBlacklight 1.0 documents to OGM Aardvark
 
 ## Development
 
