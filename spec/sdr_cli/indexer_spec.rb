@@ -11,7 +11,7 @@ RSpec.describe SdrCli::Indexer do
     end
     it "should create a new record from OGM Aardvark into the Solr index" do
       indexer.index(dir)
-      expect(gc_indexer).to have_received(:index).with(kind_of(Array), commit_within: 5000)
+      expect(gc_indexer).to have_received(:index).with(kind_of(Array))
     end
   end
 end

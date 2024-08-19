@@ -11,4 +11,4 @@ gem "standard", "~> 1.30"
 gem "solr_wrapper", "~> 4.0.2"
 gem "webmock", "~> 3.18"
 
-gem "geo_combine", github: "the-codetrane/geo-combine", branch: "v1-aardvark"
+gem "geo_combine", "~> 0.9.2"
