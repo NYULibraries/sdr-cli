@@ -5,7 +5,7 @@ module SdrCli
   class Fetcher
     attr_reader :ogm_path, :schema_version, :repo
 
-    def initialize(ogm_path:, schema_version: "1.0", repo: nil)
+    def initialize(ogm_path:, schema_version: "Aardvark", repo: nil)
       @ogm_path = ogm_path
       @schema_version = schema_version
       @repo = repo
