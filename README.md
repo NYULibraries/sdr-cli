@@ -26,13 +26,23 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ### Running Tests
 
-After checking out the project, copy `.env.example` to `.env`. These variables will inform the `solr_wrapper` gem how to start up a Solr instance when running the test suite.
+1. After checking out the project, copy `.env.example` to `.env`. These variables will inform the `solr_wrapper` gem how to start up a Solr instance when running the test suite.
 
-Then run the test suite with the following command:
+    ```sh
+    $ cp .env.example .env
+    ```
+2. Install the neccesary java and ruby versions as well as ruby gems:
 
-```bash
-$ bundle exec rake
-```
+    ```sh
+    $ asdf install
+    $ bundle install
+    ```
+
+3. Then run the test suite with the following command:
+
+    ```sh
+    $ bundle exec rake
+    ```
 
 ## Contributing
 
