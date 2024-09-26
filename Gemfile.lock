@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sdr_cli (0.1.0)
+    sdr_cli (0.2.0)
       dotenv (~> 2.7)
       faraday (~> 2.10.1)
       thor (~> 1.2.2)
