@@ -65,26 +65,5 @@ module SdrCli
 
       SdrCli::Transformer.new(directory: directory, destination: destination).run
     end
-
-    desc "audit", "Compares the metadata repo with what's available in NYU GeoServer instances"
-    long_desc <<-MSG
-      A command to compare a local metadata repo with what's available in NYU GeoServer instances.
-      Pass the --directory option to specify the directory containing an NYU Metadata repository.
-      Pass the --destination option to specify the directory where the audit report CSV will be saved.
-    MSG
-
-    option :directory
-    option :destination
-    option :check_downloads, type: :boolean
-    def audit
-      directory = options["directory"]
-      destination = options["destination"]
-      check_downloads = options["check_downloads"]
-
-      raise ArgumentError, "You must specify the metadata project directory" unless directory
-      raise ArgumentError, "You must specify a destination directory" unless destination
-
-      SdrCli::Auditor.new(directory: directory, destination: destination, check_downloads: check_downloads).run
-    end
   end
 end
