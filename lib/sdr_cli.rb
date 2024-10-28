@@ -7,7 +7,6 @@ require_relative "sdr_cli/aardvark_file"
 require_relative "sdr_cli/fetcher"
 require_relative "sdr_cli/transformer"
 require_relative "sdr_cli/indexer"
-require_relative "sdr_cli/auditor"
 require_relative "sdr_cli/cli"
 
 module SdrCli
