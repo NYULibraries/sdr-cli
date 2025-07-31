@@ -4,7 +4,7 @@ PATH
     sdr_cli (0.2.0)
       dotenv (~> 2.7)
       faraday (~> 2.10.1)
-      thor (~> 1.2.2)
+      thor (~> 1.4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -165,7 +165,7 @@ GEM
     standard-performance (1.2.0)
       lint_roller (~> 1.1)
       rubocop-performance (~> 1.19.0)
-    thor (1.2.2)
+    thor (1.4.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
