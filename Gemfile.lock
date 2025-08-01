@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sdr_cli (0.2.0)
+    sdr_cli (0.2.1)
       dotenv (~> 2.7)
       faraday (~> 2.10.1)
       thor (~> 1.4.0)
@@ -180,6 +180,7 @@ GEM
 PLATFORMS
   arm64-darwin-22
   arm64-darwin-23
+  arm64-darwin-24
   x86_64-linux
 
 DEPENDENCIES
