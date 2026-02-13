@@ -29,11 +29,12 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "dotenv", "~> 2.7"
-  spec.add_dependency "faraday", "~> 2.10.1"
+  spec.add_dependency "faraday", "~> 2.14.1"
   spec.add_dependency "thor", "~> 1.4.0"
   # spec.add_dependency "geo_combine", "~> 0.8.0"
   spec.add_development_dependency "solr_wrapper", "~> 4.0.2"
   spec.add_development_dependency "pry", "~> 0.14.2"
+  spec.add_development_dependency "bundler-audit"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
